@@ -8,58 +8,47 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   min-height: 100vh;
+  width: 100%;
   background-color: #091921;
 }
 
 .clock {
   width: 250px;
   height: 250px;
-  border: 4px solid #091921;
+  border: 0px solid #091921;
   border-radius: 50%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   /* background: #e9fcfc; */
-  box-shadow: inset 0 15px 15px rgba(255, 255, 255, 0.1),inset 0 -15px 15px rgba(255, 255, 255, 0.1),
-    0 15px 15px rgba(0, 0, 0, 0.5), 0 -15px 15px rgba(0, 0, 0, 0.5);
-    
+  box-shadow: 
+  inset 10px 10px 10px rgba(255, 255, 255, 0.1), 
+  inset -10px 10px 10px rgba(255, 255, 255, 0.1), 
+  inset 10px -10px 10px rgba(255, 255, 255, 0.1),
+  inset -10px -10px 10px rgba(255, 255, 255, 0.1),
+  10px 10px 10px rgba(0, 0, 0, 0.5), 
+  -10px 10px 10px rgba(0, 0, 0, 0.5), 
+  10px -10px 10px rgba(0, 0, 0, 0.5), 
+  -10px -10px 10px rgba(0, 0, 0, 0.5);
 }
 
-.clock::before {
-  position: absolute;
-  content: "";
-  width: 240px;
-  height: 240px;
-  z-index: 3;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-}
-
-/* .clock::after {
+.clock::after {
   position: absolute;
   content: "";
   width: 10px;
   height: 10px;
-  background-color: #fff;
+  background-color: white;
   border-radius: 50%;
-} */
-
-.center-nut {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    z-index: 2;
-    
-    background-color: #fff;
-
 }
 
 .indicator div {
-  width: 3px;
-  height: 10px;
-  font-weight: 700;
+  width: 2px;
+  height: 8px;
+  font-size: 18px;
+  font-weight: 500;
   font-family: Arial, Helvetica, sans-serif;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.7);
@@ -74,8 +63,7 @@
 }
 
 .indicator div:nth-child(3) {
-  font-size: 20px;
-  transform: translateX(100px);
+  transform: translateX(100px) translateY(-2px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,7 +80,6 @@
 }
 
 .indicator div:nth-child(6) {
-  font-size: 20px;
   transform: translateY(100px);
   display: flex;
   justify-content: center;
@@ -110,8 +97,7 @@
 }
 
 .indicator div:nth-child(9) {
-  font-size: 20px;
-  transform: translateX(-100px);
+  transform: translateX(-100px) translateY(-2px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,7 +114,6 @@
 }
 
 .indicator div:nth-child(12) {
-  font-size: 20px;
   transform: translateY(-100px);
   display: flex;
   justify-content: center;
@@ -138,30 +123,97 @@
 }
 
 .sec-hand {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    z-index: 5;
-    transform: rotate(0deg);
-    background-color: #fff;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  z-index: 5;
+  transform: rotate(90deg);
+  animation: sec-hand 60s linear infinite;
 }
 
 .sec-hand:before {
-    position: absolute;
-    content: '';
-    height: 120px;
-    width: 3px;
-    left: 1px;
-    top: -30px;
-    background-color: red;
+  position: absolute;
+  content: '';
+  height: 110px;
+  width: 1px;
+  left: 0px;
+  top: -25px;
+  background: white;
+  border-radius: 3px;
 }
 
 .sec-hand:after {
-    position: absolute;
-    content: '';
-    height: 30px;
-    width: 5px;
-    left:  0px;
-    top: -29px;
-    background-color: red;
+  position: absolute;
+  content: '';
+  height: 35px;
+  width: 3px;
+  left: -1px;
+  top: -35px;
+  background: white;
+  border-radius: 3px;
+}
+
+.min-hand {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  z-index: 4;
+  animation: min-hand 3600s linear infinite;
+}
+
+.min-hand:before {
+  position: absolute;
+  content: '';
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 50px solid red;
+  left: -3px;
+  top: -75px;
+  width: 1px;
+  height: 1px;
+}
+
+.min-hand:after {
+  position: absolute;
+  content: '';
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-top: 25px solid red;
+  left: -3px;
+  top: -25px;
+  width: 3px;
+  height: 1px;
+}
+
+.hr-hand {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  z-index: 3;
+  transform: rotate(30deg);
+  animation: hr-hand 43200s linear infinite;
+}
+
+.hr-hand:before {
+  position: absolute;
+  content: '';
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-bottom: 45px solid red;
+  left: -3px;
+  top: -65px;
+  width: 1px;
+  height: 1px;
+}
+
+.hr-hand:after {
+  position: absolute;
+  content: '';
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-top: 20px solid red;
+  left: -3px;
+  top: -20px;
+  width: 3px;
+  height: 1px;
 }
