@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    background-color: #F3F3FB;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz {
+    width: 28%;
+    min-width: 400px;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: 5px -2px 30px rgba(188, 188, 198, .25), -5px -2px 30px rgba(188, 188, 198, .25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.ques {
+    width: 100%;
+    padding: 25px;
+    border-bottom: 1px solid #8C8C9C;
+    text-align: center;
+    color: #8C8C9C;
+}
+
+.ques h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.ans {
+    width: 100%;
+    font-size: 14px;
+}
+
+.ans li {
+    margin-top: 15px;
+    margin-left: 20%;
+}
+
+.ans li label {
+    color: #8C8C9C;
+}
+
+.submit {
+    width: 100%;
+    padding: 25px;
+    border: 0px;
+    border-radius: 0 0 10px 10px;
+    color: #fff;
+    background-color: #4370E7;
+}
