@@ -30,6 +30,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* text-align: center; */
 }
 
 .quiz {
@@ -56,6 +57,9 @@ body {
 .ques h2 {
     font-size: 20px;
     font-weight: 500;
+}
+
+.score {
 }
 
 .ans {
