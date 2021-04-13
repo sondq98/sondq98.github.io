@@ -41,9 +41,11 @@ const a_ans = document.querySelector('#a_text');
 const b_ans = document.querySelector('#b_text');
 const c_ans = document.querySelector('#c_text');
 const d_ans = document.querySelector('#d_text');
-
+const answers = document.querySelectorAll('.answer');
 let currentQuiz = 0;
+
 function loadQuiz() {
+    deSelectAns();
     const currentQuizData = quizData[currentQuiz];
     questionQuiz.innerText = currentQuizData.question;
     a_ans.innerText = currentQuizData.a;
@@ -53,8 +55,6 @@ function loadQuiz() {
 }
 
 function getSelected() {
-    const answers = document.querySelectorAll('.answer');
-    
     let result = undefined;
     answers.forEach(ans => {
         if (ans.checked) {
@@ -64,6 +64,13 @@ function getSelected() {
     return result;
 }
 
+function deSelectAns() {
+    answers.forEach(ans => {
+        if (ans.checked) {
+            ans.checked = false;
+        }
+    })
+}
 
 const submitBtn = document.querySelector('.submit');
 submitBtn.addEventListener("click", () => {
