@@ -30,7 +30,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* text-align: center; */
 }
 
 .quiz {
@@ -59,9 +58,6 @@ body {
     font-weight: 500;
 }
 
-.score {
-}
-
 .ans {
     width: 100%;
     font-size: 14px;
@@ -73,6 +69,7 @@ body {
 }
 
 .ans li label {
+    cursor: pointer;
     color: #8C8C9C;
 }
 
@@ -82,9 +79,14 @@ body {
     border: 0px;
     border-radius: 0 0 10px 10px;
     color: #fff;
+    background-color: rgba(67,112,231,.75);
+}
+
+.submit:hover {
     background-color: rgba(67,112,231,.85);
 }
 
-.submit:active {
+.submit:focus {
     background-color: rgba(67,112,231,1);
 }
+
