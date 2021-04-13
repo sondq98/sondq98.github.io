@@ -11,6 +11,10 @@ a {
     color: #000
 }
 
+button:focus {
+    outline: 0 !important;
+}
+
 li {
     list-style: none;
 }
@@ -74,5 +78,9 @@ body {
     border: 0px;
     border-radius: 0 0 10px 10px;
     color: #fff;
-    background-color: #4370E7;
+    background-color: rgba(67,112,231,.85);
+}
+
+.submit:active {
+    background-color: rgba(67,112,231,1);
 }
