@@ -1,0 +1,224 @@
+/** global element styling **/
+
+:root {
+    --main-white: #f0f0f0;
+    --main-red: #be3144;
+    --main-blue: #45567d;
+    --main-gray: #303841;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--main-gray);
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+/** Local styling **/
+
+.container {
+    min-width: 400px;
+}
+
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--main-red);
+}
+
+#header nav ul {
+    font-size: 2rem;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+#header nav ul a {
+    display: block;
+    padding: 2rem;
+}
+
+#welcome-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+
+#welcome-section h1 {
+    font-size: 5.7rem;
+    color: white;
+}
+
+#welcome-section p {
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--main-red);
+    font-weight: 200;
+}
+
+#projects {
+    font-size: 1.856rem;
+    padding: 5em .5em;
+    text-align: center;
+    color: var(--main-white);
+    background-color: var(--main-blue);
+}
+
+#projects .header {
+    font-size: 4.2rem;
+    max-width: 640px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.2rem solid var(--main-white);
+}
+
+.projects-grid {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+}
+
+.project {
+    background: var(--main-gray);
+}
+
+.project-img {
+    height: calc(100% - 5.4rem);
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 1.5rem 0.4rem;
+}
+
+.project .project-title span {
+    color: var(--main-gray);
+    transition: color 0.3s ease-out;
+}
+
+.project-title:hover .code {
+    color: #ff7f50;
+}
+
+.btn.btn-show-all {
+    font-size: 2rem;
+    padding: 10px 20px;
+    transition: background-color 1s;
+    background-color: var(--main-gray);
+}
+
+.btn.btn-show-all:hover {
+    text-align: center;
+    background-color: var(--main-red);
+}
+
+.btn.btn-show-all i {
+    margin-left: 10px;
+}
+
+#contact {
+    width: 100%;
+    height: 80vh;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--main-white);
+    background-color: var(--main-gray);
+}
+
+.contact-section-header>h2 {
+    font-size: 6rem;
+}
+
+.contact-section-header>p {
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.contact-links {
+    font-size: 2.2rem;
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 980px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    padding: 1rem 2rem;
+    transition: transform 0.3s ease-out;
+}
+
+.contact-links a:hover {
+    transform: translateY(1rem);
+}
+
+footer {
+    font-size: 1.8rem;
+    font-weight: 300;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    color: var(--main-white);
+    border-top: solid var(--main-red);
+}
+
+footer p {
+    margin: 2rem;
+}
+
+@media (max-width: 500px) {
+    .header {
+        justify-content: center;
+    }
+    .header nav ul {
+        margin: 0 auto;
+    }
+    #about h1 {
+        font-style: 5.2rem;
+    }
+}
