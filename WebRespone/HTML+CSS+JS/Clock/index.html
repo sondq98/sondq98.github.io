@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <style id="clock-animate"></style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock">
+
+            <div class="indicator">
+                <div></div>
+                <div></div>
+                <div><span>3</span></div>
+                <div></div>
+                <div></div>
+                <div><span>6</span></div>
+                <div></div>
+                <div></div>
+                <div><span>9</span></div>
+                <div></div>
+                <div></div>
+                <div><span>12</span></div>
+            </div>
+
+            <div class="center-nut"></div>
+
+            <div class="sec-hand">
+            </div>
+            <div class="min-hand">
+            </div>
+            <div class="hr-hand">
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="app.js"></script> -->
+    <script>
+        const deg = 6;
+        const hr = document.querySelector('.hr-hand');
+        const mn = document.querySelector('.min-hand');
+        const sc = document.querySelector('.sec-hand');
+
+        setInterval(() => {
+            let day = new Date();
+            let hh = day.getHours() * 30;
+            let mm = day.getMinutes() * deg;
+            let ss = day.getSeconds() * deg;
+
+            hr.style.transform = `rotate(${hh + (mm / 12)}deg)`;
+            mn.style.transform = `rotate(${mm}deg)`;
+            sc.style.transform = `rotate(${ss}deg)`;
+        })
+    </script>
+</body>
+
+</html>
